@@ -15,7 +15,7 @@ var config = {
       packets: 10 * 24 * 60 * 60 * 1000              //10 days
     }
   },
-  http_api_base_url_v1: 'http://happyyoung-pc.chinacloudapp.cn:23000/trashnetwork/v1/',
+  http_api_base_url_v1: 'http://localhost:23000/trashnetwork/v1/',
 };
 
 module.exports={

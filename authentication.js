@@ -3,7 +3,7 @@
  */
 
 var USER_TYPE_WEBSERVER = 'trashnetwork_webserver_user';
-var USER_TYPE_MOBILE = 'trashnetwork_mobile_user';
+var USER_TYPE_MOBILE_CLEANING = 'trashnetwork_mobile_cleaning_user';
 
 var logger = require('./log').logger;
 logger.setLevel('INFO');
@@ -26,8 +26,8 @@ var authenticate_connection = function(client, username, password, callback) {
         if(user_id == 'admin' && password.toString() == '123456')
           authorized = true;
         break;
-      case USER_TYPE_MOBILE:
-        url = 'mobile/account/check_login/' + user_id;
+      case USER_TYPE_MOBILE_CLEANING:
+        url = 'mobile/cleaning/account/check_login/' + user_id;
         break;
     }
   }catch (err){

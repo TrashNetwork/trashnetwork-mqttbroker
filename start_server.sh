@@ -1,2 +1,7 @@
 #!/usr/bin/env bash
-node ./mqtt-broker.js > /dev/null &
+
+tmux new-session -d -s TrashNetwork-MQTT \
+ "unset SSH_CLIENT;
+  unset SSH_CONNECTION;
+  node ./mqtt-broker.js"
+

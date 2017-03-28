@@ -38,3 +38,6 @@ jspm_packages
 
 # IDEA
 .idea
+
+# Sync config
+sync_config.sh

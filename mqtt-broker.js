@@ -7,6 +7,7 @@ var logger = require('./log').logger;
 logger.setLevel('INFO');
 var authentication = require('./authentication');
 var config = require('./config').config;
+var db_util = require('./database_utils');
 
 var redis_store_opts = config.redis_store;
 
@@ -46,10 +47,13 @@ server.on('clientDisconnected', function(client) {
 function setup() {
   logger.info('Mosca server is up and running...');
   server.authenticate = authentication.authenticate;
+  server.authorizeSubscribe = authentication.authorize_subscribe;
+  server.authorizePublish = authentication.authorize_publish;
 }
 
 process.on('SIGINT', function(){
   logger.info('Mosca server is stoping...');
+  db_util.close_db();
   server.close();
   process.exit(0);
 });

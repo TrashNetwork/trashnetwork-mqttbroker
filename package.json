@@ -13,6 +13,7 @@
     "mosca": "latest",
     "redis": "latest",
     "log4js": "latest",
+    "mysql": "latest",
     "request": "latest"
   },
   "author": {
